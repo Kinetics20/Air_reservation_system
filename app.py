@@ -64,6 +64,35 @@ class Flight:
         self.seating_plan[row_to][letter_to] = self.seating_plan[row_from][letter_from]
         self.seating_plan[row_from][letter_to] = None
 
+    def get_empty_seat(self):
+        return sum(sum(1 for seat in row.values()
+                        if seat is None)
+                    for row in self.seating_plan if row is not None)
+
+        # return sum(len([seat for seat in row.values()
+        #                if seat is None])
+        #            for row in self.seating_plan if row is not None)
+
+        # total = 0
+        #
+        # for row in self.seating_plan:
+        #     if row is not None:
+        #         for passenger in row.values():
+        #             if passenger is None:
+        #                 total += 1
+        # return total
+
+    def get_passenger_list(self):
+        rows, seats = self.airplane.get_seating_plan()
+
+        for row in rows:
+            for letter in seats:
+                passenger = self.seating_plan[row][letter]
+                if passenger is not None:
+                    yield passenger, f'{row} {letter}'
+
+
+
 class Airplane:
     def get_seats_no(self):
         rows, seats = self.get_seating_plan()
@@ -106,5 +135,8 @@ f.allocate_passenger(passenger='Lech K', seat='12B')
 f.allocate_passenger(passenger='Donald T', seat='12C')
 f.allocate_passenger(passenger='Jaro K', seat='13C')
 f.relocate_passenger('13C', '25G')
-# f.allocate_passenger(passenger='Parasite', seat='32C')
-pp(f.seating_plan)
+# # f.allocate_passenger(passenger='Parasite', seat='32C')
+# print(f.get_empty_seat() == airbus.get_seats_no())
+# pp(f.seating_plan)
+for passenger in f.get_passenger_list():
+    print(passenger)
