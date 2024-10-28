@@ -15,9 +15,9 @@ x = magic()
 # for i in magic():
 #     print(i)
 
-for i in magic():
-    for j in magic():
-        print(i, j)
+# for i in magic():
+#     for j in magic():
+#         print(i, j)
 
 # print(next(x))
 # print(next(x))
@@ -25,3 +25,22 @@ for i in magic():
 
 # for item in x:
 #     print(item)
+
+r = sum((1,2))
+print(r)
+r = sum([1,2])
+print(r)
+r = sum({1:'ala',2:'ola'})
+print(r)
+r = sum([x for x in range(10)])
+print(r)
+r = sum([1 for _ in range(10)])
+print(r)
+r = sum({l:None for l in range(10)})
+print(r)
+r = {l:None for l in range(10)}
+print(r)
+r= sum(x for x in range(10))
+print(r)
+print(list(x for x in range(10)))
+print(tuple(x for x in range(10)))
