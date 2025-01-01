@@ -25,6 +25,34 @@ pytest = "8.3.4"
 
 To get started with the project, follow these steps:
 
-1. **Install Poetry (if not already installed):**
+## How to Run?
+
+1. Install `pipx` (a recommended way to manage Python tools):  
    ```bash
-   pipx install poetry
+   sudo apt install pipx
+   pipx ensurepath
+
+2. Install Poetry using pipx:
+    ```bash
+    pipx install poetry
+    ```
+
+3. Install Mypy using Poetry:
+    ```bash
+    poetry add mypy
+    ```
+
+4. Install Jupyter Notebook using Poetry:
+    ```bash
+    poetry add 'pytest==8.3.4'
+    ```
+5Install Pytest using Poetry:
+    ```bash
+    poetry add 'notebook==7.3.1'
+    ```   
+
+## Update all dependencies:
+```bash
+poetry update
+```
+
