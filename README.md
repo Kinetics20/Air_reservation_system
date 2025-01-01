@@ -195,7 +195,8 @@ class Flight:
 
     The project uses object-oriented programming to represent airplanes and flights.
     It supports seat allocation, passenger management, and ticket printing.
-    The system is highly modular, with separate components for planes, flight management, and helpers for ticket printing.
+    The system is highly modular, with separate components for planes, flight management, 
+    and helpers for ticket printing.
 
 💬 Thank You!
 
