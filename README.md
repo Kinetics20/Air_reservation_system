@@ -102,6 +102,7 @@ if __name__ == '__main__':
 
 Contains airplane models and their seating plans.
 
+```python
 # Airplane Model Base Class
 class Airplane:
     def get_seats_no(self):
@@ -125,11 +126,12 @@ class Boeing737Max(Airplane):
     @staticmethod
     def get_seating_plan():
         return range(1, 46), 'ABCDEGHJK'
-
+```
 ### 3. Helpers Directory
 
 Contains the ticket printing function.
 
+```python
 def card_printer(passenger, seat, airplane, flight_number):
     message = f'| Passenger: \033[91m{passenger.title()}\033[0m, Seat: {seat}, Airplane: {airplane}, {flight_number} |'
     frame = f'+{'-' * (len(message) - 2)}+'
@@ -137,11 +139,12 @@ def card_printer(passenger, seat, airplane, flight_number):
 
     banner = [frame, empty_frame, empty_frame, empty_frame, message, empty_frame, empty_frame, empty_frame, frame]
     print('\n'.join(banner))
-
+```
 ### 4. flight Directory
 
 Handles the flight operations such as allocating passengers, relocating them, and printing tickets.
 
+```python
 class Flight:
     def __init__(self, flight_number, airplane):
         self.flight_number = flight_number
@@ -190,7 +193,7 @@ class Flight:
         if row not in rows:
             raise ValueError(f'Row number is out of range: {row}')
         return row, letter
-
+```
 📑 Summary
 
     The project uses object-oriented programming to represent airplanes and flights.
