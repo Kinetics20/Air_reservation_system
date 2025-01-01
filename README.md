@@ -140,7 +140,7 @@ def card_printer(passenger, seat, airplane, flight_number):
     banner = [frame, empty_frame, empty_frame, empty_frame, message, empty_frame, empty_frame, empty_frame, frame]
     print('\n'.join(banner))
 ```
-### 4. flight Directory
+### 4. Flight Directory
 
 Handles the flight operations such as allocating passengers, relocating them, and printing tickets.
 
